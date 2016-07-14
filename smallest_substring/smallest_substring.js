@@ -11,7 +11,7 @@ var str = 'xyy';
 
 function smallest_substring(arr, str) {
 
-	var possible = [];
+	var possible = [ 'x', 'y' ];
 
 	// iterate over str
 	for (var i = 0; i < str.length; i++) {
@@ -20,7 +20,7 @@ function smallest_substring(arr, str) {
 
 		console.log('first conditional: ', arr.indexOf(str[i]) !== -1);
 
-		console.log('second conditional: ', possible.indexOf(str[i]) === -1);
+		console.log('second conditional: ', possible.indexOf('y') === -1);
 
 		// if character is in array, and, if character not already in 'possible' array
 		if ( (arr.indexOf(str[i]) !== -1) && (possible.indexOf(str[i]) === -1) ) {
