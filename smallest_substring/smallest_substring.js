@@ -7,23 +7,28 @@
 // Implement your solution and analyze the runtime complexity
 
 var arr = [ 'x', 'y', 'z' ];
-var str = 'xyyzyzyx';
+var str = 'xyy';
 
 function smallest_substring(arr, str) {
 
-	var possible = '';
+	var possible = [];
 
 	// iterate over str
 	for (var i = 0; i < str.length; i++) {
 
-		// if in array
-		if (arr.indexOf(str[i]) !== -1) {
+		console.log('current character: ', str[i]);
 
-			console.log('str[i]: ', str[i]);
+		console.log('first conditional: ', arr.indexOf(str[i]) !== -1);
 
-			// assign to possible
-			possible.concat(str[i]); // why isn't concat working?!
-			console.log('possible: ', possible);
+		console.log('second conditional: ', possible.indexOf(str[i]) === -1);
+
+		// if character is in array, and, if character not already in 'possible' array
+		if ( (arr.indexOf(str[i]) !== -1) && (possible.indexOf(str[i]) === -1) ) {
+
+			console.log('inside if!');
+			// // add to possible
+			// possible.push( str[i] ); // q: why isn't .concat() working?!
+			// console.log('possible: ', possible);
 		}
 	}
 
